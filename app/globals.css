@@ -1,0 +1,567 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ══════════════════════════════════════════════
+   FORD ANTENNA FONT FACES
+   ══════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-Black.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-RegularItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-SemiboldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna';
+  src: url('/fonts/FordAntenna-BlackItalic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ══════════════════════════════════════════════
+   FORD ANTENNA CONDENSED FONT FACES
+   ══════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Ford Antenna Condensed';
+  src: url('/fonts/FordAntennaCond-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Condensed';
+  src: url('/fonts/FordAntennaCond-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Condensed';
+  src: url('/fonts/FordAntennaCond-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Condensed';
+  src: url('/fonts/FordAntennaCond-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Condensed';
+  src: url('/fonts/FordAntennaCond-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Condensed';
+  src: url('/fonts/FordAntennaCond-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Condensed';
+  src: url('/fonts/FordAntennaCond-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Condensed';
+  src: url('/fonts/FordAntennaCond-Black.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ══════════════════════════════════════════════
+   FORD ANTENNA EXTRA CONDENSED FONT FACES
+   ══════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Ford Antenna Extra Condensed';
+  src: url('/fonts/FordAntennaExtraCond-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Extra Condensed';
+  src: url('/fonts/FordAntennaExtraCond-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Extra Condensed';
+  src: url('/fonts/FordAntennaExtraCond-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Extra Condensed';
+  src: url('/fonts/FordAntennaExtraCond-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Extra Condensed';
+  src: url('/fonts/FordAntennaExtraCond-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Extra Condensed';
+  src: url('/fonts/FordAntennaExtraCond-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Extra Condensed';
+  src: url('/fonts/FordAntennaExtraCond-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ford Antenna Extra Condensed';
+  src: url('/fonts/FordAntennaExtraCond-Black.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.1450 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1450 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.1450 0 0);
+  --primary: oklch(0.5568 0.2218 29.3239);
+  --primary-foreground: oklch(0.9850 0 0);
+  --secondary: oklch(0.9700 0 0);
+  --secondary-foreground: oklch(0.2050 0 0);
+  --muted: oklch(0.9700 0 0);
+  --muted-foreground: oklch(0.5560 0 0);
+  --accent: oklch(0.9700 0 0);
+  --accent-foreground: oklch(0.2050 0 0);
+  --destructive: oklch(0.5568 0.2218 29.3239);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9220 0 0);
+  --input: oklch(0.9220 0 0);
+  --ring: oklch(0.7080 0 0);
+  --chart-1: oklch(0.8100 0.1000 252);
+  --chart-2: oklch(0.6200 0.1900 260);
+  --chart-3: oklch(0.5500 0.2200 263);
+  --chart-4: oklch(0.4900 0.2200 264);
+  --chart-5: oklch(0.4200 0.1800 266);
+  --sidebar: oklch(0.9850 0 0);
+  --sidebar-foreground: oklch(0.1450 0 0);
+  --sidebar-primary: oklch(0.2050 0 0);
+  --sidebar-primary-foreground: oklch(0.9850 0 0);
+  --sidebar-accent: oklch(0.9700 0 0);
+  --sidebar-accent-foreground: oklch(0.2050 0 0);
+  --sidebar-border: oklch(0.9220 0 0);
+  --sidebar-ring: oklch(0.7080 0 0);
+  --font-sans: 'Ford Antenna', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --radius: 0.625rem;
+  --shadow-x: 0;
+  --shadow-y: 1px;
+  --shadow-blur: 3px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.1;
+  --shadow-color: oklch(0 0 0);
+  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+  
+  /* ══════════════════════════════════════════════
+     FLUID TYPOGRAPHY
+     ══════════════════════════════════════════════ */
+  --fs-xs: clamp(0.75rem, 1.5vw, 0.875rem);
+  --fs-sm: clamp(0.875rem, 2vw, 1rem);
+  --fs-base: clamp(1rem, 2.5vw, 1.125rem);
+  --fs-lg: clamp(1.125rem, 3vw, 1.25rem);
+  --fs-xl: clamp(1.25rem, 3.5vw, 1.5rem);
+  --fs-2xl: clamp(1.5rem, 4vw, 2rem);
+  --fs-3xl: clamp(2rem, 5vw, 3rem);
+  --fs-4xl: clamp(2.5rem, 6vw, 4rem);
+  --fs-5xl: clamp(3rem, 8vw, 5rem);
+  
+  /* ══════════════════════════════════════════════
+     FLUID SPACING
+     ══════════════════════════════════════════════ */
+  --space-xs: clamp(0.25rem, 1vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 2vw, 1rem);
+  --space-md: clamp(1rem, 4vw, 2rem);
+  --space-lg: clamp(2rem, 6vw, 3rem);
+  --space-xl: clamp(3rem, 8vw, 5rem);
+  --space-2xl: clamp(4rem, 12vw, 8rem);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* Fluid Typography для заголовків */
+  h1 { 
+    font-size: var(--fs-4xl); 
+    line-height: 1.1; 
+    font-family: 'Ford Antenna Extra Condensed', 'Ford Antenna', sans-serif;
+    font-weight: 700; 
+  }
+  h2 { 
+    font-size: var(--fs-3xl); 
+    line-height: 1.2; 
+    font-family: 'Ford Antenna Extra Condensed', 'Ford Antenna', sans-serif;
+    font-weight: 700; 
+  }
+  h3 { 
+    font-size: var(--fs-2xl); 
+    line-height: 1.3; 
+    font-weight: 600; 
+  }
+  h4 { 
+    font-size: var(--fs-xl); 
+    line-height: 1.4; 
+    font-weight: 600; 
+  }
+  h5 { 
+    font-size: var(--fs-lg); 
+    line-height: 1.5; 
+    font-weight: 500; 
+  }
+  h6 { 
+    font-size: var(--fs-base); 
+    line-height: 1.5; 
+    font-weight: 500; 
+  }
+  
+  p, li { 
+    max-width: 75ch; 
+  }
+  
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
+  }
+}
+
+@layer utilities {
+  /* Auto-responsive Grid */
+  .auto-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(100%, var(--min-column-width, 300px)), 1fr)
+    );
+    gap: var(--grid-gap, clamp(1rem, 3vw, 2rem));
+  }
+  
+  /* Animated Star */
+  @keyframes star-rotate {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  
+  @keyframes star-pulse {
+    0%, 100% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+  
+  .star-animated {
+    animation: star-rotate 20s linear infinite, star-pulse 3s ease-in-out infinite;
+  }
+  
+  /* Flex Stack */
+  .flex-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--stack-gap, 1rem);
+  }
+  
+  .flex-stack > * {
+    flex: 1 1 min(100%, var(--stack-min-width, 300px));
+  }
+  
+  /* Fluid spacing utilities */
+  .space-fluid-xs { gap: var(--space-xs); }
+  .space-fluid-sm { gap: var(--space-sm); }
+  .space-fluid-md { gap: var(--space-md); }
+  .space-fluid-lg { gap: var(--space-lg); }
+  .space-fluid-xl { gap: var(--space-xl); }
+  .space-fluid-2xl { gap: var(--space-2xl); }
+  
+  .p-fluid-xs { padding: var(--space-xs); }
+  .p-fluid-sm { padding: var(--space-sm); }
+  .p-fluid-md { padding: var(--space-md); }
+  .p-fluid-lg { padding: var(--space-lg); }
+  .p-fluid-xl { padding: var(--space-xl); }
+  .p-fluid-2xl { padding: var(--space-2xl); }
+  
+  .px-fluid-xs { padding-left: var(--space-xs); padding-right: var(--space-xs); }
+  .px-fluid-sm { padding-left: var(--space-sm); padding-right: var(--space-sm); }
+  .px-fluid-md { padding-left: var(--space-md); padding-right: var(--space-md); }
+  .px-fluid-lg { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+  .px-fluid-xl { padding-left: var(--space-xl); padding-right: var(--space-xl); }
+  .px-fluid-2xl { padding-left: var(--space-2xl); padding-right: var(--space-2xl); }
+  
+  .py-fluid-xs { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+  .py-fluid-sm { padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+  .py-fluid-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }
+  .py-fluid-lg { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+  .py-fluid-xl { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+  .py-fluid-2xl { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
+  
+  .mb-fluid-xs { margin-bottom: var(--space-xs); }
+  .mb-fluid-sm { margin-bottom: var(--space-sm); }
+  .mb-fluid-md { margin-bottom: var(--space-md); }
+  .mb-fluid-lg { margin-bottom: var(--space-lg); }
+  .mb-fluid-xl { margin-bottom: var(--space-xl); }
+  .mb-fluid-2xl { margin-bottom: var(--space-2xl); }
+  
+  .mt-fluid-xs { margin-top: var(--space-xs); }
+  .mt-fluid-sm { margin-top: var(--space-sm); }
+  .mt-fluid-md { margin-top: var(--space-md); }
+  .mt-fluid-lg { margin-top: var(--space-lg); }
+  .mt-fluid-xl { margin-top: var(--space-xl); }
+  .mt-fluid-2xl { margin-top: var(--space-2xl); }
+  
+  /* Fluid typography utilities */
+  .text-fluid-xs { font-size: var(--fs-xs); }
+  .text-fluid-sm { font-size: var(--fs-sm); }
+  .text-fluid-base { font-size: var(--fs-base); }
+  .text-fluid-lg { font-size: var(--fs-lg); }
+  .text-fluid-xl { font-size: var(--fs-xl); }
+  .text-fluid-2xl { font-size: var(--fs-2xl); }
+  .text-fluid-3xl { font-size: var(--fs-3xl); }
+  .text-fluid-4xl { font-size: var(--fs-4xl); }
+  .text-fluid-5xl { font-size: var(--fs-5xl); }
+  
+  /* Extra Condensed Font Utility */
+  .font-extra-condensed {
+    font-family: 'Ford Antenna Extra Condensed', 'Ford Antenna', sans-serif;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Партия социалистов Республики Молдова - Презентация</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #ffffff;
+      color: #2A2B2D;
+      overflow: hidden;
+    }
+
+    .presentation {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    }
+
+    .slide {
+      width: 90vw;
+      max-width: 1440px;
+      height: 80vh;
+      max-height: 810px;
+      padding: clamp(2rem, 4vw, 4rem) clamp(2.5rem, 5vw, 5rem);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      background: white;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      border-radius: 0.5rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    .slide h1 {
+      font-size: clamp(1.75rem, 4.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
+      color: #2A2B2D;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .slide h2 {
+      font-size: clamp(1.25rem, 3.5vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
+      margin-top: clamp(0.5rem, 1.5vw, 1rem);
+      color: #2A2B2D;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+
+    .slide h3 {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+      margin-top: clamp(0.75rem, 2vw, 1.25rem);
+      color: #2A2B2D;
+    }
+
+    .slide p, .slide li {
+      font-size: clamp(0.875rem, 2vw, 1.125rem);
+      line-height: 1.5;
+      margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+      max-width: 75ch;
+    }
+
+    .slide ul, .slide ol {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .slide li {
+      margin-bottom: 0.75rem;
+    }
+
+    /* Цветовая схема ПСРМ */
+    .psrm-red {
+      color: #D7120A;
+    }
+
+    .psrm-dark-red {
+      color: #7B0B07;
+    }
+
+    .psrm-gray {
+      color: #58595B;
+    }
+
+    .bg-psrm-red {
+      background: linear-gradient(135deg, #D7120A 0%, #7B0B07 100%);
+    }
+
+    .bg-psrm-gray {
+      background: linear-gradient(135deg, #58595B 0%, #4A4B4D 100%);
+    }
+
+    .border-psrm-red {
+      border-color: #D7120A;
+    }
+
+    /* Заголовок с фирменным стилем */
+    .psrm-header {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin-bottom: 2rem;
+    }
+
+    .psrm-header-icon {
+      width: 64px;
+      background: #D7120A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .psrm-header-text {
+      background: linear-gradient(135deg, #58595B 0%, #4A4B4D 100%);
+      padding: 1rem 2rem;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .psrm-header-text h2 {
+      color: white;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .cover-slide {
+      text-align: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-slide-star {
+      position: absolute;
+      top: 3%;
+      right: 3%;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cover-slide-star svg {
+      width: clamp(120px, 15vw, 200px);
+      height: auto;
+    }
+
+    .cover-slide-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .cover-slide h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #D7120A 0%, #7B0B07 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    .cover-slide .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      color: #58595B;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .cover-slide .logo-container {
+      margin-bottom: 1.5rem;
+    }
+
+    .cover-slide .logo-container img {
+      max-width: clamp(200px, 25vw, 300px);
+      height: auto;
+    }
+
+    .cover-slide p {
+      font-size: clamp(0.875rem, 2vw, 1.125rem);
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+      margin: clamp(1rem, 2vw, 1.5rem) 0;
+    }
+
+    .program-card {
+      background: white;
+      border: 2px solid #e5e5e5;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .program-card:hover {
+      box-shadow: 0 8px 24px rgba(215, 18, 10, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .program-card-image {
+      position: relative;
+      width: 100%;
+      height: clamp(140px, 18vh, 180px);
+      overflow: hidden;
+      background: linear-gradient(135deg, #D7120A 0%, #7B0B07 100%);
+    }
+
+    .program-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .program-card-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(215, 18, 10, 0.2) 0%, rgba(123, 11, 7, 0.2) 100%);
+      pointer-events: none;
+    }
+
+    .program-card-content {
+      padding: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .program-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+
+    .program-card-title {
+      background: linear-gradient(135deg, #58595B 0%, #4A4B4D 100%);
+      color: white;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.25rem;
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .program-card-time {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #D7120A;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .program-card-time-icon {
+      width: 14px;
+      height: 14px;
+    }
+
+    .program-card-keyword {
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      color: #2A2B2D;
+      text-transform: uppercase;
+      margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    .program-card-description {
+      font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+      color: #58595B;
+      line-height: 1.5;
+      margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
+    }
+
+    .leader-card {
+      background: white;
+      border: 2px solid #e5e5e5;
+      border-radius: 0.5rem;
+      padding: clamp(1rem, 2vw, 1.5rem);
+      transition: all 0.3s;
+    }
+
+    .leader-card:hover {
+      box-shadow: 0 8px 24px rgba(215, 18, 10, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .leader-quote {
+      font-size: 1rem;
+      font-style: italic;
+      color: #2A2B2D;
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      border-left: 3px solid #D7120A;
+    }
+
+    .leader-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .leader-photo {
+      width: clamp(60px, 8vw, 80px);
+      height: clamp(60px, 8vw, 80px);
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #D7120A;
+      flex-shrink: 0;
+    }
+
+    .leader-name {
+      font-weight: 600;
+      color: #2A2B2D;
+      margin-bottom: 0.25rem;
+    }
+
+    .leader-position {
+      font-size: 0.875rem;
+      color: #58595B;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+      margin: clamp(1rem, 2vw, 1.5rem) 0;
+    }
+
+    .feature-card {
+      background: white;
+      border: 2px solid #e5e5e5;
+      border-radius: 0.5rem;
+      padding: clamp(1.25rem, 2.5vw, 1.5rem);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(215, 18, 10, 0.15);
+      transform: translateY(-4px);
+      border-color: #D7120A;
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(135deg, #D7120A 0%, #7B0B07 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2A2B2D;
+      margin-bottom: 1rem;
+    }
+
+    .feature-description {
+      font-size: 0.875rem;
+      color: #58595B;
+      line-height: 1.6;
+    }
+
+    .navigation {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      gap: 1rem;
+      z-index: 1000;
+    }
+
+    .nav-btn {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #D7120A 0%, #7B0B07 100%);
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      text-transform: uppercase;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: linear-gradient(135deg, #7B0B07 0%, #D7120A 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(215, 18, 10, 0.3);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .slide-counter {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      background: linear-gradient(135deg, #58595B 0%, #4A4B4D 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      z-index: 1000;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+      margin: clamp(1rem, 2vw, 1.5rem) 0;
+    }
+
+    .toc-item {
+      padding: clamp(1rem, 2vw, 1.25rem);
+      background: white;
+      border: 2px solid #e5e5e5;
+      border-left: 4px solid #D7120A;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .toc-item:hover {
+      background: #f9f9f9;
+      transform: translateX(4px);
+      border-color: #D7120A;
+    }
+
+    .toc-item-number {
+      font-weight: 700;
+      color: #D7120A;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .toc-item-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #2A2B2D;
+    }
+
+    .quote-mark {
+      font-size: 3rem;
+      color: #D7120A;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    @media (max-width: 768px) {
+      .slide {
+        padding: 2rem 2.5rem;
+        width: 95vw;
+        height: 85vh;
+      }
+
+      .two-columns,
+      .program-grid,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation {
+        bottom: 1rem;
+        right: 1rem;
+        flex-direction: column;
+      }
+
+      .nav-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+      }
+
+      .slide-counter {
+        bottom: 1rem;
+        left: 1rem;
+        font-size: 0.75rem;
+        padding: 0.375rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="presentation">
+    <!-- Slide 1: Cover -->
+    <div class="slide active cover-slide">
+      <div class="cover-slide-star">
+        <svg viewBox="0 0 887 848" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clipPath="url(#clip0_52_2)">
+            <path d="M0 321.906L275.399 525.773L312.172 513.633L92.5585 351.966L0 321.906Z" fill="#D7120A"/>
+            <path d="M443.5 0.0109863L551.535 324.817L443.5 468.547V0.0109863Z" fill="#D7120A"/>
+            <path d="M443.5 0L341.096 322.807L363.707 354.68L443.5 97.7069V0Z" fill="#D7120A"/>
+            <path d="M887 321.906L615.177 525.773L443.5 468.547L887 321.906Z" fill="#D7120A"/>
+            <path d="M887 321.906H550.535L528.118 355.708L798.331 355.664L887 321.906Z" fill="#D7120A"/>
+            <path d="M715.323 847.668L443.5 647.45V468.547L715.323 847.668Z" fill="#D7120A"/>
+            <path d="M715.323 847.668L615.177 525.773L577.783 513.09L659.947 770.694L715.323 847.668Z" fill="#D7120A"/>
+            <path d="M171.678 847.668L275.4 525.773L443.5 468.547L171.678 847.668Z" fill="#D7120A"/>
+            <path d="M171.678 847.671L443.5 647.311V608.672L224.804 767.638L171.678 847.671Z" fill="#D7120A"/>
+            <path d="M0 321.906H348.484L443.5 468.547L0 321.906Z" fill="#D7120A"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_52_2">
+              <rect width="887" height="847.668" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div class="cover-slide-content">
+        <div class="logo-container">
+          <img src="images/logo-psrm.svg" alt="ПСРМ" onerror="this.style.display='none'">
+        </div>
+        <h1>Партия социалистов<br>Республики Молдова</h1>
+        <div class="subtitle">Вместе строим будущее Молдовы</div>
+        <p style="max-width: 800px; margin: 0 auto; color: #58595B;">
+          Сила, которая объединяет людей ради процветания нашей страны
+        </p>
+      </div>
+    </div>
+
+    <!-- Slide 2: Содержание -->
+    <div class="slide">
+      <div class="psrm-header">
+        <div class="psrm-header-icon">
+          <span style="color: white; font-size: 2rem;">📋</span>
+        </div>
+        <div class="psrm-header-text">
+          <h2>Содержание</h2>
+        </div>
+      </div>
+      <div class="toc">
+        <div class="toc-item" onclick="goToSlide(3)">
+          <div class="toc-item-number">01</div>
+          <div class="toc-item-title">О партии</div>
+        </div>
+        <div class="toc-item" onclick="goToSlide(4)">
+          <div class="toc-item-number">02</div>
+          <div class="toc-item-title">Почему выбирают нас</div>
+        </div>
+        <div class="toc-item" onclick="goToSlide(5)">
+          <div class="toc-item-number">03</div>
+          <div class="toc-item-title">Программные направления</div>
+        </div>
+        <div class="toc-item" onclick="goToSlide(7)">
+          <div class="toc-item-number">04</div>
+          <div class="toc-item-title">Лидеры партии</div>
+        </div>
+        <div class="toc-item" onclick="goToSlide(8)">
+          <div class="toc-item-number">05</div>
+          <div class="toc-item-title">Наша миссия</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: О партии -->
+    <div class="slide">
+      <div class="psrm-header">
+        <div class="psrm-header-icon">
+          <span style="color: white; font-size: 2rem;">🏛️</span>
+        </div>
+        <div class="psrm-header-text">
+          <h2>О партии</h2>
+        </div>
+      </div>
+      <p style="font-size: clamp(1.125rem, 3vw, 1.5rem); line-height: 1.8; max-width: none; margin-bottom: 2rem;">
+        Партия социалистов Республики Молдова — это сила, которая объединяет людей 
+        ради процветания нашей страны. Мы работаем для каждого гражданина, 
+        защищая интересы народа и строя справедливое общество.
+      </p>
+      <div class="two-columns">
+        <div>
+          <h3 style="color: #D7120A; margin-bottom: 1rem;">Наши принципы</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: #D7120A;">✓</span>
+              <strong>Социальная справедливость</strong> — защита прав каждого гражданина
+            </li>
+            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: #D7120A;">✓</span>
+              <strong>Единство народа</strong> — объединение всех граждан Молдовы
+            </li>
+            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: #D7120A;">✓</span>
+              <strong>Прозрачность власти</strong> — честность и открытость
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color: #D7120A; margin-bottom: 1rem;">Наши цели</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: #D7120A;">✓</span>
+              <strong>Процветание страны</strong> — экономическое развитие
+            </li>
+            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: #D7120A;">✓</span>
+              <strong>Защита интересов народа</strong> — реальное участие граждан
+            </li>
+            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+              <span style="position: absolute; left: 0; color: #D7120A;">✓</span>
+              <strong>Справедливое общество</strong> — равные возможности для всех
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Почему выбирают нас -->
+    <div class="slide">
+      <div class="psrm-header">
+        <div class="psrm-header-icon">
+          <span style="color: white; font-size: 2rem;">⭐</span>
+        </div>
+        <div class="psrm-header-text">
+          <h2>Почему выбирают нас</h2>
+        </div>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">❤️</div>
+          <div class="feature-title">Социальная справедливость</div>
+          <div class="feature-description">
+            Защита прав и интересов каждого гражданина, обеспечение равных возможностей 
+            и достойного уровня жизни для всех
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <div class="feature-title">Экономическое развитие</div>
+          <div class="feature-description">
+            Стимулирование роста экономики, создание рабочих мест и поддержка 
+            малого и среднего бизнеса
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-title">Защита интересов народа</div>
+          <div class="feature-description">
+            Борьба за справедливость, прозрачность власти и реальное участие 
+            граждан в управлении страной
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: Программные направления - Часть 1 -->
+    <div class="slide">
+      <div class="psrm-header">
+        <div class="psrm-header-icon">
+          <span style="color: white; font-size: 2rem;">🎯</span>
+        </div>
+        <div class="psrm-header-text">
+          <h2>Программные направления</h2>
+        </div>
+      </div>
+      <div class="program-grid">
+        <div class="program-card">
+          <div class="program-card-image">
+            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop" alt="Семья" onerror="this.style.display='none'">
+            <div class="program-card-image-overlay"></div>
+          </div>
+          <div class="program-card-content">
+            <div class="program-card-header">
+              <div class="program-card-title">ПОДДЕРЖКА СЕМЬИ</div>
+              <div class="program-card-time">
+                <svg class="program-card-time-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                </svg>
+                4 ГОДА
+              </div>
+            </div>
+            <div class="program-card-keyword">СЕМЬЯ</div>
+            <div class="program-card-description">
+              Укрепление института семьи, защита материнства и детства, 
+              улучшение условий для молодых семей
+            </div>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="program-card-image">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Инфраструктура" onerror="this.style.display='none'">
+            <div class="program-card-image-overlay"></div>
+          </div>
+          <div class="program-card-content">
+            <div class="program-card-header">
+              <div class="program-card-title">ИНФРАСТРУКТУРА</div>
+              <div class="program-card-time">
+                <svg class="program-card-time-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                </svg>
+                4 ГОДА
+              </div>
+            </div>
+            <div class="program-card-keyword">ИНФРАСТРУКТУРА</div>
+            <div class="program-card-description">
+              Модернизация дорог, коммуникаций и социальной инфраструктуры 
+              для улучшения качества жизни
+            </div>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="program-card-image">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop" alt="Образование" onerror="this.style.display='none'">
+            <div class="program-card-image-overlay"></div>
+          </div>
+          <div class="program-card-content">
+            <div class="program-card-header">
+              <div class="program-card-title">ОБРАЗОВАНИЕ</div>
+              <div class="program-card-time">
+                <svg class="program-card-time-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                </svg>
+                4 ГОДА
+              </div>
+            </div>
+            <div class="program-card-keyword">ОБРАЗОВАНИЕ</div>
+            <div class="program-card-description">
+              Доступное качественное образование, поддержка науки и инноваций, 
+              развитие человеческого капитала
+            </div>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="program-card-image">
+            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=800&h=600&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Здоровье" onerror="this.style.display='none'">
+            <div class="program-card-image-overlay"></div>
+          </div>
+          <div class="program-card-content">
+            <div class="program-card-header">
+              <div class="program-card-title">ЗДРАВООХРАНЕНИЕ</div>
+              <div class="program-card-time">
+                <svg class="program-card-time-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                </svg>
+                4 ГОДА
+              </div>
+            </div>
+            <div class="program-card-keyword">ЗДОРОВЬЕ</div>
+            <div class="program-card-description">
+              Доступная и качественная медицинская помощь, профилактика заболеваний, 
+              забота о здоровье нации
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6: Программные направления - Часть 2 -->
+    <div class="slide">
+      <div class="psrm-header">
+        <div class="psrm-header-icon">
+          <span style="color: white; font-size: 2rem;">🎯</span>
+        </div>
+        <div class="psrm-header-text">
+          <h2>Программные направления</h2>
+        </div>
+      </div>
+      <div class="program-grid">
+        <div class="program-card">
+          <div class="program-card-image">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop" alt="Справедливость" onerror="this.style.display='none'">
+            <div class="program-card-image-overlay"></div>
+          </div>
+          <div class="program-card-content">
+            <div class="program-card-header">
+              <div class="program-card-title">ПРАВОВАЯ ЗАЩИТА</div>
+              <div class="program-card-time">
+                <svg class="program-card-time-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                </svg>
+                4 ГОДА
+              </div>
+            </div>
+            <div class="program-card-keyword">СПРАВЕДЛИВОСТЬ</div>
+            <div class="program-card-description">
+              Защита прав граждан, борьба с коррупцией, обеспечение справедливости 
+              и верховенства закона
+            </div>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="program-card-image">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=600&fit=crop" alt="Экономика" onerror="this.style.display='none'">
+            <div class="program-card-image-overlay"></div>
+          </div>
+          <div class="program-card-content">
+            <div class="program-card-header">
+              <div class="program-card-title">ПРОМЫШЛЕННОСТЬ</div>
+              <div class="program-card-time">
+                <svg class="program-card-time-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                </svg>
+                4 ГОДА
+              </div>
+            </div>
+            <div class="program-card-keyword">ЭКОНОМИКА</div>
+            <div class="program-card-description">
+              Поддержка отечественного производителя, развитие агропромышленного комплекса, 
+              создание рабочих мест
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: clamp(1.5rem, 3vw, 2rem); padding: clamp(1.25rem, 2.5vw, 1.5rem); background: linear-gradient(135deg, #D7120A 0%, #7B0B07 100%); border-radius: 0.5rem; text-align: center;">
+        <h3 style="color: white; margin: 0; font-size: clamp(1.125rem, 3vw, 1.5rem); line-height: 1.4;">
+          Шесть направлений. Четыре года. Одна цель — <br>процветающая Молдова!
+        </h3>
+      </div>
+    </div>
+
+    <!-- Slide 7: Лидеры партии -->
+    <div class="slide">
+      <div class="psrm-header">
+        <div class="psrm-header-icon">
+          <span style="color: white; font-size: 2rem;">👥</span>
+        </div>
+        <div class="psrm-header-text">
+          <h2>Лидеры партии</h2>
+        </div>
+      </div>
+      <div class="program-grid">
+        <div class="leader-card">
+          <div class="leader-quote">
+            "Мы строим будущее Молдовы вместе с народом. Наша сила — в единстве и справедливости."
+          </div>
+          <div class="leader-info">
+            <img src="images/Dodon.jpg" alt="Игорь Додон" class="leader-photo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\'%3E%3Crect width=\'80\' height=\'80\' fill=\'%23D7120A\'/%3E%3C/svg%3E';">
+            <div>
+              <div class="leader-name">Игорь Додон</div>
+              <div class="leader-position">Председатель ПСРМ</div>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-quote">
+            "Каждый гражданин заслуживает достойной жизни. Мы работаем для каждого из вас."
+          </div>
+          <div class="leader-info">
+            <img src="images/Batrincea.jpg" alt="Влад Батрынча" class="leader-photo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\'%3E%3Crect width=\'80\' height=\'80\' fill=\'%23D7120A\'/%3E%3C/svg%3E';">
+            <div>
+              <div class="leader-name">Влад Батрынча</div>
+              <div class="leader-position">Заместитель председателя ПСРМ</div>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-quote">
+            "Прозрачность и честность — основа нашей работы. Народ должен знать правду."
+          </div>
+          <div class="leader-info">
+            <img src="images/Odnostalko.jpg" alt="Владимир Односталко" class="leader-photo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\'%3E%3Crect width=\'80\' height=\'80\' fill=\'%23D7120A\'/%3E%3C/svg%3E';">
+            <div>
+              <div class="leader-name">Владимир Односталко</div>
+              <div class="leader-position">Член Политбюро ПСРМ</div>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-quote">
+            "Экономическое развитие и социальная справедливость — приоритеты нашей партии."
+          </div>
+          <div class="leader-info">
+            <img src="images/Novak.jpg" alt="Григорий Новак" class="leader-photo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\'%3E%3Crect width=\'80\' height=\'80\' fill=\'%23D7120A\'/%3E%3C/svg%3E';">
+            <div>
+              <div class="leader-name">Григорий Новак</div>
+              <div class="leader-position">Член Политбюро ПСРМ</div>
+            </div>
+          </div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-quote">
+            "Защита прав женщин и семьи — это защита будущего нашей нации."
+          </div>
+          <div class="leader-info">
+            <img src="images/Cabotari.jpg" alt="Ольга Чеботарь" class="leader-photo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\'%3E%3Crect width=\'80\' height=\'80\' fill=\'%23D7120A\'/%3E%3C/svg%3E';">
+            <div>
+              <div class="leader-name">Ольга Чеботарь</div>
+              <div class="leader-position">Член Политбюро ПСРМ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8: Наша миссия -->
+    <div class="slide cover-slide">
+      <h1 style="margin-bottom: 3rem;">Наша миссия</h1>
+      <div style="max-width: 1000px; margin: 0 auto;">
+        <div style="padding: 3rem; background: white; border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+          <p style="font-size: clamp(1.25rem, 3.5vw, 1.75rem); line-height: 1.8; text-align: center; color: #2A2B2D; margin-bottom: 2rem;">
+            Партия социалистов Республики Молдова объединяет всех граждан, 
+            кто верит в справедливое общество и процветающую Молдову.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;">
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; font-weight: 800; color: #D7120A; margin-bottom: 0.5rem;">6</div>
+              <div style="font-size: 1rem; color: #58595B;">Направлений</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; font-weight: 800; color: #D7120A; margin-bottom: 0.5rem;">4</div>
+              <div style="font-size: 1rem; color: #58595B;">Года работы</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 3rem; font-weight: 800; color: #D7120A; margin-bottom: 0.5rem;">1</div>
+              <div style="font-size: 1rem; color: #58595B;">Общая цель</div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <h2 style="color: #D7120A; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">
+            Вместе строим будущее Молдовы! 🇲🇩
+          </h2>
+          <p style="font-size: clamp(1.125rem, 3vw, 1.5rem); color: #58595B;">
+            Присоединяйтесь к нам!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-counter">
+    <span id="current-slide">1</span> / <span id="total-slides">8</span>
+  </div>
+
+  <div class="navigation">
+    <button class="nav-btn" id="prev-btn" onclick="previousSlide()" disabled>← Назад</button>
+    <button class="nav-btn" id="next-btn" onclick="nextSlide()">Вперёд →</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    document.getElementById('total-slides').textContent = totalSlides;
+
+    function updateSlide() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+      });
+
+      document.getElementById('current-slide').textContent = currentSlide + 1;
+      document.getElementById('prev-btn').disabled = currentSlide === 0;
+      document.getElementById('next-btn').disabled = currentSlide === totalSlides - 1;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function previousSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlide();
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        previousSlide();
+      }
+    });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) {
+        nextSlide();
+      }
+      if (touchEndX > touchStartX + 50) {
+        previousSlide();
+      }
+    }
+
+    updateSlide();
+  </script>
+</body>
+</html>
+
