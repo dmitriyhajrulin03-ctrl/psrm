@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Ensure proper routing for Netlify
+  trailingSlash: false,
+  // Disable output for Netlify plugin (plugin handles this)
 };
 
 export default nextConfig;
