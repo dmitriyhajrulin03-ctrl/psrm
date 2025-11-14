@@ -35,12 +35,14 @@ export const DropdownMenuItem = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement> & { asChild?: boolean }
 >(({ className, asChild, children, ...props }, ref) => {
   if (asChild && React.isValidElement(children)) {
-    return React.cloneElement(children as React.ReactElement, {
+    return React.cloneElement(children as React.ReactElement<any>, {
       className: cn(
         "px-4 py-2 text-sm cursor-pointer hover:bg-accent hover:text-accent-foreground block w-full text-left",
+        (children.props as any).className,
         className
       ),
       ref,
+      ...props,
     });
   }
 
