@@ -36,3 +36,4 @@ export function AdaptiveCard({ title, image, description }: AdaptiveCardProps) {
 
 
 
+
