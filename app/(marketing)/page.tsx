@@ -2,7 +2,6 @@ import { HeroSection } from "@/sections/hero";
 import { FeaturesSection } from "@/sections/features";
 import { TestimonialsSection } from "@/sections/testimonials";
 import { PricingSection } from "@/sections/pricing";
-import { NewsletterSection } from "@/sections/newsletter";
 import { SectionDivider } from "@/components/shared/section-divider";
 
 export default function HomePage() {
@@ -15,8 +14,6 @@ export default function HomePage() {
       <TestimonialsSection />
       <SectionDivider />
       <PricingSection />
-      <SectionDivider />
-      <NewsletterSection />
     </>
   );
 }
