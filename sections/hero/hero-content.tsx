@@ -14,7 +14,7 @@ export function HeroContent() {
         </h1>
         
         <p className="
-          text-black
+          text-muted-foreground
           mb-fluid-lg
           max-w-3xl
           leading-relaxed
