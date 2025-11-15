@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock, Heart, Building2, GraduationCap, HeartPulse, Gavel, Factory, LucideIcon, Baby, Shield, Home, BookOpen, Microscope, Users, Stethoscope, Pill, Activity, Scale, Lock, TrendingUp, Briefcase, Truck } from "lucide-react";
+import { Clock, Heart, Building2, GraduationCap, HeartPulse, Gavel, Factory, LucideIcon, Baby, Shield, Home, BookOpen, Microscope, Users, Stethoscope, Pill, Activity, Scale, Lock, TrendingUp, Briefcase, Truck, Target } from "lucide-react";
 
 type DescriptionPoint = {
   text: string;
@@ -169,9 +169,12 @@ export function TestimonialsSection() {
     <section className="py-fluid-lg">
       <div className="container mx-auto max-w-screen-2xl px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64">
         <div className="mb-fluid-xl">
-          <h2 className="text-[#58595B] font-extra-condensed uppercase text-fluid-3xl md:text-fluid-4xl font-bold text-center md:text-left">
-            Программные направления
-          </h2>
+          <div className="flex items-center gap-3 md:gap-4 text-center md:text-left">
+            <Target className="h-6 w-6 md:h-8 md:w-8 text-[#D7120A] flex-shrink-0" strokeWidth={2.5} />
+            <h2 className="text-[#58595B] font-extra-condensed uppercase text-fluid-3xl md:text-fluid-4xl font-bold">
+              Программные направления
+            </h2>
+          </div>
         </div>
         <div 
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
