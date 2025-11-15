@@ -93,7 +93,7 @@ export function PricingSection() {
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-bold text-fluid-base text-white mb-1 uppercase font-extra-condensed">
+                    <p className="font-bold text-fluid-base text-white mb-0.5 uppercase font-extra-condensed">
                       {leader.name}
                     </p>
                     <p className="text-white/90 text-fluid-sm">
