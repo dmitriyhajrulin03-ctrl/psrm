@@ -1,18 +1,18 @@
 export function NewsletterSection() {
   return (
-    <section className="py-fluid-lg bg-white">
-      <div className="container mx-auto max-w-screen-2xl px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 lg:gap-6">
+    <section className="py-fluid-sm md:py-fluid-lg bg-white overflow-x-hidden">
+      <div className="container mx-auto max-w-screen-2xl px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-6">
           {/* Левая часть - слоган */}
-          <div className="flex items-center flex-shrink-0">
-            <h2 className="text-[#D7120A] font-extra-condensed uppercase text-fluid-3xl md:text-fluid-4xl lg:text-fluid-5xl font-bold leading-tight whitespace-nowrap">
+          <div className="flex items-center flex-shrink-0 w-full md:w-auto">
+            <h2 className="text-[#D7120A] font-extra-condensed uppercase text-fluid-xl sm:text-fluid-2xl md:text-fluid-3xl lg:text-fluid-4xl xl:text-fluid-5xl font-bold leading-tight text-center md:text-left md:whitespace-nowrap">
               Верим в Молдову!
             </h2>
           </div>
           
           {/* Правая часть - звезда с текстом */}
-          <div className="flex items-center flex-shrink-0">
-            <div className="bg-[#D7120A] border-2 border-white px-4 py-3 md:px-5 md:py-4 lg:px-6 lg:py-5 flex items-center gap-3 md:gap-4 lg:gap-5" style={{ boxShadow: '0 0 0 2px #D7120A, 0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
+          <div className="flex items-center flex-shrink-0 w-full md:w-auto">
+            <div className="bg-[#D7120A] border-2 border-white px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4 lg:px-6 lg:py-5 flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full md:w-auto justify-center md:justify-start" style={{ boxShadow: '0 0 0 2px #D7120A, 0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
               {/* Звезда в обводке */}
               <div className="flex-shrink-0 relative">
                 <svg 
@@ -21,7 +21,7 @@ export function NewsletterSection() {
                   viewBox="0 0 887 848" 
                   fill="none" 
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16"
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-14 md:h-14 lg:w-16 lg:h-16"
                 >
                   <g clipPath="url(#clip0_star)">
                     <path d="M0 321.906L275.399 525.773L312.172 513.633L92.5585 351.966L0 321.906Z" fill="white"/>
@@ -44,7 +44,7 @@ export function NewsletterSection() {
               </div>
               
               {/* Текст */}
-              <p className="text-white font-extra-condensed uppercase text-fluid-3xl md:text-fluid-4xl lg:text-fluid-5xl font-bold leading-tight whitespace-nowrap">
+              <p className="text-white font-extra-condensed uppercase text-fluid-lg sm:text-fluid-xl md:text-fluid-2xl lg:text-fluid-3xl xl:text-fluid-4xl font-bold leading-tight text-center md:text-left md:whitespace-nowrap">
                 Голосуй за социалистов
               </p>
             </div>
