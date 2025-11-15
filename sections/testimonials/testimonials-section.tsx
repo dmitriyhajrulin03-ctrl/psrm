@@ -18,14 +18,26 @@ type ProgramPoint = {
 };
 
 function ProgramCard({ point, index }: { point: ProgramPoint; index: number }) {
-  // Ряд 1 (0,1): красная, серая
-  // Ряд 2 (2,3): серая, красная
-  // Ряд 3 (4,5): красная, серая
+  // Мобильная версия (1 колонка): простое чередование красная-серая-красная-серая
+  // Десктоп версия (2 колонки): 
+  //   Ряд 1 (0,1): красная, серая
+  //   Ряд 2 (2,3): серая, красная
+  //   Ряд 3 (4,5): красная, серая
   const row = Math.floor(index / 2);
   const positionInRow = index % 2;
-  const isRed = (row % 2 === 0 && positionInRow === 0) || (row % 2 === 1 && positionInRow === 1);
-  const bgColor = isRed ? 'bg-[#D7120A]' : 'bg-gradient-to-r from-[#58595B] to-[#4A4B4D]';
-  const textColor = isRed ? 'text-white' : 'text-white';
+  
+  // Для мобильной версии простое чередование по индексу (красная-серая-красная-серая)
+  const isRedMobile = index % 2 === 0;
+  // Для десктопа сложная логика по рядам
+  const isRedDesktop = (row % 2 === 0 && positionInRow === 0) || (row % 2 === 1 && positionInRow === 1);
+  
+  // Цвета для мобильной и десктоп версии
+  const bgColorMobile = isRedMobile ? 'bg-[#D7120A]' : 'bg-gradient-to-r from-[#58595B] to-[#4A4B4D]';
+  const bgColorDesktop = isRedDesktop ? 'md:bg-[#D7120A]' : 'md:bg-gradient-to-r md:from-[#58595B] md:to-[#4A4B4D]';
+  
+  // Объединяем классы
+  const bgColor = `${bgColorMobile} ${bgColorDesktop}`;
+  const textColor = 'text-white';
   
   return (
     <div 
