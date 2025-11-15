@@ -3,7 +3,7 @@ import "./globals.css";
 import { QueryProvider } from "@/components/providers/query-provider";
 
 export const metadata: Metadata = {
-  title: "PSRM - Онлайн обучение",
+  title: "Партия социалистов Республики Молдова",
   description: "Записывайтесь на курсы онлайн. Более 1000 курсов от лучших преподавателей.",
 };
 

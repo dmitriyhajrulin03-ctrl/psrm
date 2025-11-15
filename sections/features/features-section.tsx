@@ -40,11 +40,11 @@ export function FeaturesSection() {
             return (
               <Card key={index} className="border border-[#D7120A] bg-white rounded-none shadow-none">
                 <CardContent className="p-6">
-                  <div className="flex flex-col items-start gap-3 md:gap-4">
+                  <div className="flex flex-col items-start gap-4 md:gap-5">
                     <div className="flex-shrink-0">
                       <Icon className="h-12 w-12 md:h-16 md:w-16 text-[#58595B] stroke-[1.5]" />
                     </div>
-                    <h3 className="text-[#D7120A] font-bold text-fluid-xl md:text-fluid-2xl uppercase mb-4 text-left font-extra-condensed">
+                    <h3 className="text-[#D7120A] font-bold text-fluid-xl md:text-fluid-2xl uppercase text-left font-extra-condensed">
                       {feature.title}
                     </h3>
                     <p className="text-foreground text-fluid-sm md:text-fluid-base leading-relaxed text-left">
