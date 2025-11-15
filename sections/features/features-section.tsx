@@ -21,7 +21,7 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-fluid-lg bg-muted/30">
+    <section className="py-fluid-lg bg-white">
       <div className="container mx-auto max-w-screen-2xl px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64">
         <div className="mb-fluid-xl">
           <div className="flex items-center gap-3 md:gap-4 text-center md:text-left">

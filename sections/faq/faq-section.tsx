@@ -17,7 +17,7 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section className="py-fluid-lg">
+    <section className="py-fluid-lg bg-white">
       <div className="container mx-auto max-w-screen-2xl px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64">
         <h2 className="font-bold mb-fluid-xl">Часто задаваемые вопросы</h2>
         <div className="max-w-3xl space-fluid-md">

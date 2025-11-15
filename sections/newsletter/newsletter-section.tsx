@@ -1,6 +1,6 @@
 export function NewsletterSection() {
   return (
-    <section className="py-fluid-lg bg-muted/30">
+    <section className="py-fluid-lg bg-white">
       <div className="container mx-auto max-w-screen-2xl px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64">
         <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 lg:gap-6">
           {/* Левая часть - слоган */}
