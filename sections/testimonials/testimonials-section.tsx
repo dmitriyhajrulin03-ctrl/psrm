@@ -170,7 +170,9 @@ export function TestimonialsSection() {
       <div className="container mx-auto max-w-screen-2xl px-8 md:px-16 lg:px-32 xl:px-48 2xl:px-64">
         <div className="mb-fluid-xl">
           <div className="flex items-center gap-3 md:gap-4 text-center md:text-left">
-            <Target className="h-6 w-6 md:h-8 md:w-8 text-[#D7120A] flex-shrink-0" strokeWidth={2.5} />
+            <div className="bg-[#D7120A] p-2 md:p-2.5 flex-shrink-0 flex items-center justify-center">
+              <Target className="h-5 w-5 md:h-6 md:w-6 text-white" strokeWidth={2.5} />
+            </div>
             <h2 className="text-[#58595B] font-extra-condensed uppercase text-fluid-3xl md:text-fluid-4xl font-bold">
               Программные направления
             </h2>
